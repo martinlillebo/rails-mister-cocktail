@@ -8,5 +8,10 @@ class CocktailsController < ApplicationController
   end
 
   def create
+    @new_cocktail = Cocktail.create!(name: params[:cocktail][:name])
+  end
+
+  def new
+    @cocktail = Cocktail.new
   end
 end
