@@ -14,4 +14,8 @@ class CocktailsController < ApplicationController
   def new
     @cocktail = Cocktail.new
   end
+
+  def cocktail_params
+    params.require(:cocktail).permit(:photo) # fjernet ":title, :body," fra kitt boiler
+  end
 end

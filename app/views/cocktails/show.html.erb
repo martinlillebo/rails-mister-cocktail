@@ -3,3 +3,7 @@
 <p> Your chosen cocktail is: </p> 
 
 <h5> <%= @cocktail.name %> </h5> 
+
+<p>paste fra kitt: "Displaying the image"</p>
+
+<%= cl_image_tag @article.photo.key, height: 300, width: 400, crop: :fill %>
