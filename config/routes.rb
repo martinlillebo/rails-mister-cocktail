@@ -1,11 +1,8 @@
 Rails.application.routes.draw do
 
   root to: "cocktails#index"
-  get 'doses/new'
-  get 'doses/create'
-  get 'doses/destroy'
-  # get 'cocktails/index'
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  get "/cocktails", to: "cocktails#index" # La inn denne for å hindre "No route matches [GET] "/cocktails"
+
   resources :cocktails, only: [:show, :new, :create]   
   resources :doses, only: [:new, :create, :destroy]
 end
