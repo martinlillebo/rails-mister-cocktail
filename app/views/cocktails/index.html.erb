@@ -1,9 +1,17 @@
-<h1>Cocktails#index</h1>
-<p>Your list of cocktails: </p>
+<div id="wrapper">
+  <h1>Cocktails</h1>
+  <p>Here's your list of cocktails: </p>
 
-<ul>
-  <% @cocktails.each do |cocktail| %>
-    <li><%= cocktail.name %></li>
-  <% end %>
-</ul>
+  <ul class="cocktail_list">
+    <% @cocktails.each do |cocktail| %>
+      <li>
+        <%= cl_image_tag cocktail.photo.key, height: 100, width: 100, crop: :scale %>
+        <%= cocktail.name %>
+        <%= link_to "See cocktail details", cocktail %>
+      </li>
+    <% end %>
+  </ul>
 
+  <%= link_to "Click here to create a new cocktail", new_cocktail_path %>
+
+</div>
