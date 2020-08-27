@@ -8,7 +8,7 @@ class CocktailsController < ApplicationController
   end
 
   def create
-    @new_cocktail = Cocktail.create!(name: params[:cocktail][:name])
+    @new_cocktail = Cocktail.create!(cocktail_params)
   end
 
   def new
@@ -16,6 +16,6 @@ class CocktailsController < ApplicationController
   end
 
   def cocktail_params
-    params.require(:cocktail).permit(:photo) # fjernet ":title, :body," fra kitt boiler
+    params.require(:cocktail).permit(:name, :photo) 
   end
 end
